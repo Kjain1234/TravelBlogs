@@ -4,6 +4,17 @@ $(document).ready(function () {
 		var header = this.document.querySelector('header');
 		header.classList.toggle("sticky",window.scrollY > 0);
 	})
+
+	const toogleBtn = document.querySelector('.toggle_btn');
+	const toogleBtnIcon = document.querySelector('.toggle_btn i');
+	const dropDownMenu = document.querySelector('.dropdown_menu');
+
+	toogleBtn.onclick = function(){
+		dropDownMenu.classList.toggle('open');
+		const isOpen = dropDownMenu.classList.contains('open');
+		toogleBtnIcon.classList = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'
+	}
+
 	var city = [
 		"Kasol",
 		"Manikaran",

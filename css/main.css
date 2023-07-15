@@ -247,6 +247,18 @@ header ul li a{
 	letter-spacing: 2px;
 	font-weight: 500px;
 	transition: 0.6s;
+	
+}
+header ul li a:hover{
+	color: orange;
+	transition: 0.6s;
+	/* scale: 1.10; */
+}
+/* .postTitle:hover, */
+header ul li:hover{
+	/* color: orange; */
+	transition: 0.4s;
+	scale: 1.20;
 }
 .headerBanner{
 	position: relative;
@@ -259,6 +271,82 @@ header.sticky{
 	background: #e5e2e2;
 }
 header.sticky .logo,
+header.sticky .toggle_btn,
 header.sticky ul li a{
 	color: #000;
+}
+.toggle_btn{
+	color: #e5e2e2;
+	cursor: pointer;
+	font-size: 1.35em;
+	display: none;
+}
+
+/* DROPDOWN MENU */
+.dropdown_menu{
+	display: none;
+	position: absolute;
+	right: 2rem;
+	top: 6rem;
+	height: 0;
+	width: 300px;
+	text-decoration: none;
+	color: #e5e2e2;
+	background: rgba(255, 255, 255, 0.1);
+	backdrop-filter: blur(5px);
+	border-radius: 10px;
+	overflow: hidden;
+	transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.dropdown_menu.open{
+	height:auto;
+}
+
+.dropdown_menu li{
+	list-style: none;
+	padding: 0.6rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.dropdown_menu li a{
+	color: #e5e2e2;
+	text-decoration: none;
+}
+.dropdown_menu li a:hover{
+	color: orange;
+	transition: 0.2s;
+	scale: 1.10;
+}
+
+/* RESPONSIVE HEADER */
+@media(max-width: 992px){
+	header ul li{
+		display: none;
+	}
+	.toggle_btn{
+		display: block;
+	}
+	.dropdown_menu{
+		display: block;
+		right: -100px;
+	}
+	.dropdown_menu.open{
+		right: 2%;
+		transition: all .55s ease;
+
+	}
+}
+@media(max-width: 576px){
+	.dropdown_menu{
+		width: unset;
+		display: block;
+		right: -100px;
+	}
+	.dropdown_menu.open{
+		right: 2%;
+		left: 2%;
+		transition: all .55s ease;
+
+	}
 }
